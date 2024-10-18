@@ -1,0 +1,44 @@
+.header {
+  background-color: #FAFBFF;
+  width: 100%;
+  padding: 10px 0;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+
+    &-text {
+      font-size: 14px;
+      margin-right: 10px;
+    }
+
+    &-phone {
+      font-size: 16px;
+      font-weight: bold;
+      color: #000;
+      text-decoration: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    &__contact {
+      flex-direction: column;
+      align-items: flex-start;
+
+      &-text {
+        display: none;
+      }
+    }
+  }
+}

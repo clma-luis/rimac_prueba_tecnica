@@ -1,0 +1,23 @@
+/* styles.scss (o cualquier archivo CSS que estés usando) */
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Hace que la página cubra toda la altura de la ventana */
+  }
+  
+  .content-wrapper {
+    flex: 1; /* Hace que el contenido tome todo el espacio disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Espaciado opcional */
+  }
+  
+  footer {
+    background-color: #f8f8f8; /* Color de fondo del footer */
+    padding: 10px 0; /* Espaciado del footer */
+    text-align: center;
+    width: 100%;
+  }
+  
