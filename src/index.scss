@@ -1,16 +1,36 @@
+@import './shared/styles/variables.scss';
+
+@font-face {
+  font-family: 'Sonoma';
+  src: url('./assets/fonts/BRSonoma-Light-BF654c452608e0f.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sonoma';
+  src: url('./assets/fonts/BRSonoma-Medium-BF654c45266edd1.otf') format('opentype');
+  font-weight: 500; 
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sonoma';
+  src: url('./assets/fonts/BRSonoma-Bold-BF654c4526823f5.otf') format('opentype');
+  font-weight: 700; 
+  font-style: normal;
+}
+
+
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Sonoma', sans-serif;
   line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: $text-color;
+  background-color: $background-color;
+
 }
 
 a {
@@ -27,11 +47,14 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
+  
+
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+ 
 }
 
 button {

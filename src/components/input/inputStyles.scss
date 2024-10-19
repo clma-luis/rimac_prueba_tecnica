@@ -1,0 +1,49 @@
+.input {
+  position: relative;
+  height: auto; 
+  background-color: #ffffff;
+  border-radius: 8px;
+
+
+  label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #6b7280;
+    transition: all 0.2s ease-out;
+    pointer-events: none;
+  }
+
+  .inputStyles {
+    width: 100%; // Asegúrate de que el input ocupe todo el ancho disponible
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #111827;
+    height: 50px; // Mantiene la altura del input
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus::placeholder {
+      color: #9ca3af;
+    }
+  }
+
+  &.focused,
+  input:not(:placeholder-shown) + label {
+    label {
+      top: 12px;
+      font-size: 10px;
+      color: #4b5563;
+    }
+  }
+
+  &.focused input::placeholder {
+    color: #9ca3af;
+  }
+}

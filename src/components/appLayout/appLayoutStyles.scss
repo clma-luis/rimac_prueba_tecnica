@@ -1,0 +1,17 @@
+.layout {
+    flex: 1;
+    position: relative;
+
+    background-image: url("../../../../assets/blur-purple.svg"), url("../../../../assets/blur-green.svg");
+    background-position: 10% 20%, 80% 90%; 
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+  
+    .svg-purple {
+      position: absolute; 
+      top: 0px; // 
+      left: 0px;
+      bottom: 0;
+      width: 600px;
+    }
+}

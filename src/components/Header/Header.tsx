@@ -1,5 +1,6 @@
+import PhoneIcon from "../../shared/icons/PhoneIcon";
 import Logo from "../logo/Logo";
-import './headerStyles.scss';
+import "./headerStyles.scss";
 
 const Header = () => {
   return (
@@ -10,7 +11,13 @@ const Header = () => {
         </div>
         <div className="header__contact">
           <span className="header__contact-text">Compra por este medio:</span>
-          <a href="tel:+51014116001" className="header__contact-phone">(01) 411 6001</a>
+
+          <div className="header__contact-phone-container">
+            <PhoneIcon />
+            <a href="tel:+51014116001" className="header__contact-phone">
+              (01) 411 6001
+            </a>
+          </div>
         </div>
       </div>
     </header>
