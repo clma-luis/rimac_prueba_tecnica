@@ -1,6 +1,5 @@
-import CardPlan from "../../../../components/cardPlan/CardPlan";
-import Carousel from "../../../../components/carousel/Carousel";
-import Card from "../../../../components/ui/card/Card";
+import Card from "../../components/cardOptions/Card";
+import CardPlan from "../../components/cardPlan/CardPlan";
 import { dataPlan, dataQuotation } from "../../config/config";
 import "./planStyles.scss";
 
@@ -32,9 +31,6 @@ const PlanPage = () => {
               />
             ))}
           </div>
-        </div>
-        <div style={{ marginTop: "40px", marginBottom: "40px" }} className="plan-page-carousel-mobile">
-          <Carousel plans={dataPlan} />
         </div>
       </div>
     </section>

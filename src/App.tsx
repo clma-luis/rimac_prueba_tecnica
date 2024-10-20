@@ -1,11 +1,13 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
-import AppLayout from "./components/appLayout/AppLayout";
+import AppLayout from "./shared/layouts/appLayout/AppLayout";
 import Header from "./components/header/Header";
-import StepperLayout from "./components/stepperLayout/StepperLayout";
+
 import HomePage from "./modules/homeModule/pages/HomePage";
-import PlanRoutes from "./modules/planModule/PlanRoutes";
-import NotFoundPage from "./shared/pages/NotFoundPage";
+import PlanPage from "./modules/planModule/pages/planPage/PlanPage";
+import SummaryPage from "./modules/planModule/pages/summaryPage/SummaryPage";
+import NotFoundPage from "./shared/pages/notFoundPage/NotFoundPage";
+import StepperLayout from "./shared/layouts/StepperLayout";
 
 function App() {
   return (
@@ -15,7 +17,8 @@ function App() {
         <StepperLayout>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/plan" element={<PlanRoutes />} />
+            <Route path="/plan" element={<PlanPage />} />
+            <Route path="/summary" element={<SummaryPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </StepperLayout>

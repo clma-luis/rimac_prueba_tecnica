@@ -1,0 +1,98 @@
+@use "../../../../shared/styles/variables.scss" as vars;
+
+.summary {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-family: vars.$secondary-font;
+
+  &__container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+  }
+
+  &__page-header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 32px;
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 1px 1px 20px rgba(153, 133, 133, 0.3);
+    width: 100%;
+  }
+
+  &__card-info {
+    font-size: 10px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 24px;
+  }
+
+  &__card-user-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &-text {
+      font-size: 20px;
+      margin: 0;
+      line-height: 28px;
+      font-weight: 700;
+    }
+  }
+
+  &__divider {
+    display: block;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #CCD1EE;
+    margin: 10px 0;
+    margin-bottom: 20px;
+  }
+
+  &__card-responsible {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px;
+
+    &--plan {
+      margin-top: 20px;
+    }
+
+    &-title {
+      font-weight: 700;
+      margin: 0;
+      font-size: 400;
+      line-height: 24px;
+    }
+
+    &-info {
+      font-size: 14px;
+      margin: 0;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+}

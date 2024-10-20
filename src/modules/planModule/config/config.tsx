@@ -1,5 +1,6 @@
 import { AddUserIcon } from "../../../shared/icons/AddUserIcon";
 import { HomeLightIcon } from "../../../shared/icons/HomeLightIcon";
+import { HospitalLightIcon } from "../../../shared/icons/HospitalLightIcon";
 import { ProtectionIcon } from "../../../shared/icons/ProtectionIcon";
 
 export interface DataQuotationProps {
@@ -24,7 +25,7 @@ export const dataQuotation: DataQuotationProps[] = [
 export interface DataPlanProps {
     title: string;
     price: string;
-    feature: JSX.Element[]; // Cambiado de string[] a JSX.Element[]
+    feature: JSX.Element[]; 
     icon: () => JSX.Element;
     recommended?: string;
   }
@@ -62,7 +63,7 @@ export const dataPlan: DataPlanProps[] = [
           Atención médica en <strong>más de 200 clínicas</strong> del país.
         </>,
       ],
-      icon: () => <HomeLightIcon />,
+      icon: () => <HospitalLightIcon />,
     },
     {
       title: "Plan en Casa + Chequeo",

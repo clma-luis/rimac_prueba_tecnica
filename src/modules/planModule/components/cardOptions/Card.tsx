@@ -1,5 +1,6 @@
-import { DataQuotationProps } from "../../../modules/planModule/config/config";
-import ButtonCheck from "../buttonCheck/buttonCheck";
+import ButtonCheck from "../../../../components/ui/buttonCheck/buttonCheck";
+import { DataQuotationProps } from "../../config/config";
+
 import "./cardStyles.scss";
 
 const Card: React.FC<DataQuotationProps> = (props) => {

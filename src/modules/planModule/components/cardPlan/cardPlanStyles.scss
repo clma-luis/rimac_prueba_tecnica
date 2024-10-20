@@ -1,0 +1,99 @@
+.card-plan {
+  max-width: 300px;
+  box-shadow: 1px 1px 20px rgba(153, 133, 133, 0.3);
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 40px;
+
+  &__content {
+    width: 100%;
+  }
+
+  &__header {
+    width: 100%;
+    min-height: 28px;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 16px;
+  }
+
+  &__tag {
+    // Estilos para el tag "recommended" si es necesario
+  }
+
+  &__title-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 900;
+    margin: 0;
+    text-align: start;
+  }
+
+  &__price-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 16px;
+  }
+
+  &__price-label {
+    margin-bottom: 0;
+    color: #7981B2;
+    margin-top: 0;
+  }
+
+  &__price {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 28px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  &__divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    width: 100%;
+    border: 1px solid #D7DBF5;
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    ul {
+      padding-left: 20px;
+    }
+  }
+
+  &__feature-item {
+    font-size: 16px;
+    line-height: 28px;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  &__button {
+    width: 100%;
+    background-color: #FF1C44;
+    height: 48px;
+    border-radius: 32px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+}

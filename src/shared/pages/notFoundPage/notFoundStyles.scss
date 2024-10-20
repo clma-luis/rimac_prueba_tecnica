@@ -1,0 +1,26 @@
+.not-found {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 20px;
+  
+    &__title {
+      margin-bottom: 16px;
+    }
+  
+    &__message {
+      margin-bottom: 24px;
+    }
+  
+    &__link {
+      color: #0000EE;
+      text-decoration: none;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
