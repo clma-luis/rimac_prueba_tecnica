@@ -22,8 +22,12 @@
     margin-bottom: 16px;
   }
 
-  &__tag {
-    // Estilos para el tag "recommended" si es necesario
+  .card-plan__tag{
+    background-color: #7DF0BA;
+    border-radius: 8px;
+    padding: 5px;
+    font-weight: 700;
+    font-size: 12px;
   }
 
   &__title-container {
