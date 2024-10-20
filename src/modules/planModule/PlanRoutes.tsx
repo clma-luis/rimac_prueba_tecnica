@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import PlanPage from "./pages/planPage/PlanPage";
-import SuccessPage from "./pages/successPage/SuccessPage";
+import SuccessPage from "./pages/summaryPage/SummaryPage";
 
 function PlanRoutes() {
   return (

@@ -1,26 +1,42 @@
+import CardPlan from "../../../../components/cardPlan/CardPlan";
+import Carousel from "../../../../components/carousel/Carousel";
 import Card from "../../../../components/ui/card/Card";
+import { dataPlan, dataQuotation } from "../../config/config";
 import "./planStyles.scss";
 
 const PlanPage = () => {
   return (
-    <section
-      style={{
-        width: "100%",
-        height: "90vh",
-        display: "flex",
-        alignItems: "center",
-        flexDirection: "column",
-        textAlign: "center",
-        paddingTop: "60px",
-      }}
-    >
-      <div style={{ maxWidth: "1200px" }}>
-        <div style={{ fontWeight: "700" }}>
-          <h1 style={{ fontSize: "40px", marginBottom: "0", maxWidth: "350px", margin: "0 auto" }}>Rocío ¿Para quién deseas cotizar?</h1>
-          <p style={{ marginTop: "8px" }}>Selecciona la opción que se ajuste más a tus necesidades.</p>
+    <section className="plan-page-section">
+      <div className="plan-page-container">
+        <div className="plan-page-header">
+          <h1>Rocío ¿Para quién deseas cotizar?</h1>
+          <p>Selecciona la opción que se ajuste más a tus necesidades.</p>
+        </div>
+
+        <div className="plan-page-quotation">
+          {dataQuotation.map((item, index) => (
+            <Card key={index} title={item.title} description={item.description} icon={item.icon} />
+          ))}
+        </div>
+
+        <div className="plan-page-plans">
+          <div className="plan-page-plans-container">
+            {dataPlan.map((item, index) => (
+              <CardPlan
+                key={index}
+                title={item.title}
+                price={item.price}
+                feature={item.feature}
+                recommended={item.recommended}
+                icon={item.icon}
+              />
+            ))}
+          </div>
+        </div>
+        <div style={{ marginTop: "40px", marginBottom: "40px" }} className="plan-page-carousel-mobile">
+          <Carousel plans={dataPlan} />
         </div>
       </div>
-      <Card/>
     </section>
   );
 };

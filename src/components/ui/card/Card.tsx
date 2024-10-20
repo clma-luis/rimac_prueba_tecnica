@@ -1,18 +1,25 @@
-import './cardStyles.scss';
+import { DataQuotationProps } from "../../../modules/planModule/config/config";
+import ButtonCheck from "../buttonCheck/buttonCheck";
+import "./cardStyles.scss";
 
-const Card = () => {
+const Card: React.FC<DataQuotationProps> = (props) => {
+  const { title, description, icon } = props;
+  const IconComponent = icon;
+
   return (
     <div className="card">
-      <div className="card__icon">
-        {/* <Shield size={24} color="#FF0000" /> */}
+      <div className="card__btncheck-container">
+        <ButtonCheck checked={false} onClick={() => {}} />
       </div>
-      <div className="card__content">
-        <h2 className="card__title">Para mí</h2>
-        <p className="card__description">
-          Cotiza tu seguro de salud y agrega familiares si así lo deseas.
-        </p>
+      <div className="card__icon-container">
+        <IconComponent />
+        <h2 className="card__title mobile">{title}</h2>
       </div>
-      {/* <div className="card__circle"></div> */}
+
+      <div className="card__text-container">
+        <h2 className="card__title desktop">{title}</h2>
+        <p className="card__text">{description}</p>
+      </div>
     </div>
   );
 };
