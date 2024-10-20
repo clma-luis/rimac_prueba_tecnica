@@ -1,7 +1,9 @@
+@use '../../../shared/styles/variables.scss' as vars;
+
 .input {
   position: relative;
   height: auto; 
-  background-color: #ffffff;
+  background-color: vars.$background-light-color;
   border-radius: 8px;
 
 
@@ -11,7 +13,7 @@
     top: 50%;
     transform: translateY(-50%);
     font-size: 16px;
-    color: #6b7280;
+    color: vars.$border-secodary-color;
     transition: all 0.2s ease-out;
     pointer-events: none;
   }
@@ -21,9 +23,9 @@
     border: none;
     outline: none;
     font-size: 16px;
-    color: #111827;
+    color: vars.$imput-color;
     height: 50px; 
-    border: 1px solid #ccc;
+    border: 1px solid vars.$input-border-color;
     border-radius: 8px;
     padding-left: 8px;
     &::placeholder {
@@ -31,7 +33,7 @@
     }
 
     &:focus::placeholder {
-      color: #9ca3af;
+      color: vars.$placeholder-focus-color;
     }
   }
 
@@ -40,12 +42,12 @@
     label {
       top: 12px;
       font-size: 10px;
-      color: #4b5563;
+      color: vars.$label-input-color;
     }
   }
 
   &.focused input::placeholder {
-    color: #9ca3af;
+    color: vars.$placeholder-color;
   }
 }
 

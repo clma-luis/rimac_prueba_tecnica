@@ -37,7 +37,7 @@
     align-items: flex-start;
     border-radius: 12px;
     padding: 20px;
-    box-shadow: 1px 1px 20px rgba(153, 133, 133, 0.3);
+    box-shadow: vars.$box-shadow;
     width: 100%;
   }
 

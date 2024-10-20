@@ -1,13 +1,36 @@
 @import "./fonts.scss";
 
+/* Primary and Secondary Colors */
 $primary-color: #3498db;
-$secondary-color: #2ecc71;
+$secondary-color: #7DF0BA;
+
+/* Text Colors */
 $text-color: #03050F;
+$text-info-color: #7981B2;
+
+/* Background Colors */
 $background-color: #f5f5f5;
+$background-light-color: #ffffff;
+$dark-color: #000000;
 
+/* Input and Placeholder Colors */
+$imput-color: #111827;
+$label-input-color: #6b7280;
+$placeholder-color: #6b7280;
+$placeholder-focus-color: #9ca3af;
+$input-border-color: #5E6488;
 
+/* Border and Divider Colors */
+$border-color: #D7DBF5;
+$border-secodary-color: #6b7280;
+$divider-secodary-color: #2b304e;
+
+/* Shadow and Effects */
+$box-shadow: 1px 1px 20px rgba(153, 133, 133, 0.3);
+
+/* Fonts */
 $primary-font: 'Sonoma', sans-serif;
 $secondary-font: 'Lato', sans-serif;
 
-
+/* Border Radius */
 $border-radius: 4px;

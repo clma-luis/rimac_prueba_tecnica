@@ -1,5 +1,7 @@
+@use "../../shared/styles/variables.scss" as vars;
+
 .footer {
-  background-color: #03050f;
+  background-color: vars.$text-color;
   width: 100%;
   padding: 16px 0;
 
@@ -22,7 +24,7 @@
   }
 
   &__bottom-text {
-    color: #ffffff;
+    color: vars.$background-light-color;
     font-size: 12px;
   }
 
@@ -41,7 +43,7 @@
         display: block;
         width: 100%;
         height: 1px;
-        border-bottom: 1px solid #2b304e;
+        border-bottom: 1px solid vars.$divider-secodary-color;
       }
     }
   }

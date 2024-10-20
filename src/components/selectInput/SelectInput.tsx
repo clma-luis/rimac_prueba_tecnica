@@ -23,27 +23,20 @@ const SelectInput: React.FC<SelectInputProps> = (props) => {
   };
 
   return (
-    <div style={{ width: "100%", display: "flex", flexDirection: "row" }}>
+    <div className="select-input-container">
       <select
         value={selectValue}
         onChange={handleSelectOnChange}
         className="custom-select"
-        style={{
-          width: "30%",
-          borderTopLeftRadius: "8px",
-          borderBottomLeftRadius: "8px",
-          borderColor: "#ccc",
-          borderRight: "0px",
-        }}
       >
         {selectOptions.map((item, index) => (
-          <option key={`${item}-${index}`} value={item} style={{ display: "flex", justifyContent: "center" }}>
+          <option key={`${item}-${index}`} value={item} className="custom-option">
             {item}
           </option>
         ))}
       </select>
 
-      <div style={{ flex: 1 }}>
+      <div className="input-container">
         <Input
           label={inputLabel}
           type="text"
