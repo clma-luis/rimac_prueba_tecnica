@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./stepperStyles.scss";
-import ArrowBackIcon from "../../shared/icons/ArrowBackIcon";
+import ArrowBackIcon from "../../../shared/icons/ArrowBackIcon";
 
 interface StepperProps {
   steps?: { number: number; label: string }[];

@@ -1,4 +1,4 @@
-@import './shared/styles/variables.scss';
+@use './shared/styles/variables.scss' as vars;
 
 @font-face {
   font-family: 'Sonoma';
@@ -28,8 +28,8 @@
   line-height: 1.5;
 
 
-  color: $text-color;
-  background-color: $background-color;
+  color: vars.$text-color;
+  background-color: vars.$background-color;
 
 }
 

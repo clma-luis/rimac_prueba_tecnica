@@ -1,12 +1,20 @@
+import { useNavigate } from "react-router-dom";
 import PhoneIcon from "../../shared/icons/PhoneIcon";
-import Logo from "../logo/Logo";
+import Logo from "../ui/logo/Logo";
 import "./headerStyles.scss";
 
+
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/");
+  };
+
   return (
     <header className="header">
       <div className="header__container">
-        <div className="header__logo">
+        <div className="header__logo" onClick={handleClick}>
           <Logo />
         </div>
         <div className="header__contact">

@@ -17,14 +17,15 @@
   }
 
   .inputStyles {
-    width: 100%; // Asegúrate de que el input ocupe todo el ancho disponible
+    width: 100%;
     border: none;
     outline: none;
     font-size: 16px;
     color: #111827;
-    height: 50px; // Mantiene la altura del input
+    height: 50px; 
     border: 1px solid #ccc;
     border-radius: 8px;
+    padding-left: 8px;
     &::placeholder {
       color: transparent;
     }
@@ -46,4 +47,14 @@
   &.focused input::placeholder {
     color: #9ca3af;
   }
+}
+
+
+@media screen and (max-width: 768px) {
+  .input {
+
+    padding-right: 10px;
+  
+  }
+  
 }

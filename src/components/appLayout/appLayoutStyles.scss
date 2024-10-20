@@ -2,7 +2,7 @@
     flex: 1;
     position: relative;
 
-    background-image: url("../../../../assets/blur-purple.svg"), url("../../../../assets/blur-green.svg");
+    background-image: url("../../assets/blur-purple.svg"), url("../../assets/blur-green.svg");
     background-position: 10% 20%, 80% 90%; 
     background-repeat: no-repeat, no-repeat;
     background-size: cover, cover;
@@ -14,4 +14,10 @@
       bottom: 0;
       width: 600px;
     }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    background-position: 120% 100%, 7% 7%;
+  }
 }

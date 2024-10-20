@@ -1,4 +1,4 @@
-import Logo from "../logo/Logo";
+import Logo from "../ui/logo/Logo";
 import "./footerStyles.scss";
 
 const Footer = () => {

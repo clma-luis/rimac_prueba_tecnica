@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./appLayoutStyles.scss";
 import { useLocation } from "react-router-dom";
+import "./appLayoutStyles.scss";
 
 const AppLayout = ({ children }: { children: React.ReactNode }) => {
   const { pathname } = useLocation();
@@ -14,7 +14,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
     }
   }, [pathname]);
 
-  return <main className={activeStyles ? "layout" : ""}>{children}</main>;
+  return <div className={activeStyles ? "layout" : ""}>{children}</div>;
 };
 
 export default AppLayout;

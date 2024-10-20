@@ -1,5 +1,5 @@
 import React from "react";
-import Input from "../input/Input";
+import Input from "../ui/input/Input";
 import "./selectInputStyles.scss";
 
 interface SelectInputProps {
