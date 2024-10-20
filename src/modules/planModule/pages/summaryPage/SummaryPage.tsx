@@ -7,7 +7,7 @@ const SummaryPage: React.FC = () => {
     <section className="summary">
       <div className="summary__container">
         <section className="summary__page-header">
-          <h1>Resumen del seguro</h1>
+          <h1 style={{margin: "0px"}}>Resumen del seguro</h1>
         </section>
 
         <section className="summary__card">

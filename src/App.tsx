@@ -8,7 +8,8 @@ import PlanPage from "./modules/planModule/pages/planPage/PlanPage";
 import SummaryPage from "./modules/planModule/pages/summaryPage/SummaryPage";
 import NotFoundPage from "./shared/pages/notFoundPage/NotFoundPage";
 import StepperLayout from "./shared/layouts/StepperLayout";
-import AppLayout from "./components/appLayout/AppLayout";
+import AppLayout from "./shared/layouts/appLayout/AppLayout";
+import HeaderNavigateLayout from "./shared/layouts/headerNavigateLayout";
 
 function App() {
   return (
@@ -16,12 +17,14 @@ function App() {
       <AppLayout>
         <Header />
         <StepperLayout>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/plan" element={<PlanPage />} />
-            <Route path="/summary" element={<SummaryPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
+          <HeaderNavigateLayout>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/plan" element={<PlanPage />} />
+              <Route path="/summary" element={<SummaryPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </HeaderNavigateLayout>
         </StepperLayout>
       </AppLayout>
     </Router>

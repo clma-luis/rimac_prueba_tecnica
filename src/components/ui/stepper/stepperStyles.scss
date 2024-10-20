@@ -1,3 +1,5 @@
+@use "../../../shared/styles/variables.scss" as vars;
+
 .stepperResponsive {
   display: none;
 }
@@ -30,7 +32,7 @@
     height: 24px;
     border-radius: 50%;
     background-color: #4f4fff;
-    color: white;
+    color: vars.$background-light-color;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,8 +43,8 @@
 
   &__number--inactive {
     background-color: transparent;
-    border: 1px solid #7981b2;
-    color: #7981b2;
+    border: 1px solid  vars.$text-info-color;
+    color: vars.$text-info-color;
     font-weight: 500;
   }
 
@@ -52,7 +54,7 @@
   }
 
   &__label--inactive {
-    color: #7981b2;
+    color: vars.$text-info-color;
     font-weight: 400;
   }
 }
@@ -85,7 +87,7 @@
     display: flex;
     align-items: center;
     padding: 10px 15px;
-    background-color: #ffffff;
+    background-color: vars.$background-light-color;
     border-bottom: 1px solid #e0e0e0;
 
     &__back {

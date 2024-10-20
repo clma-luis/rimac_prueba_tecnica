@@ -1,0 +1,45 @@
+.header-navigation {
+    background-color: transparent;
+    width: 100%;
+    padding-top: 50px;
+  }
+  
+  .header-navigation-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .back-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    outline: none; /* Remove focus outline */
+    
+    &:focus,
+    &:active {
+      outline: none; /* Disable focus outline */
+      box-shadow: none; /* Disable any box-shadow on focus */
+    }
+  }
+  
+  .back-icon-container {
+    border: 2px solid #4F4FFF;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .back-text {
+    color: #4F4FFF;
+    font-size: 18px;
+    margin: 0;
+  }
+  
