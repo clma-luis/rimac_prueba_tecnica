@@ -1,0 +1,50 @@
+@use "../../../shared/styles/variables.scss" as vars;
+
+.footer {
+  background-color: vars.$text-color;
+  width: 100%;
+  padding: 16px 0;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  &__divider {
+    display: none;
+  }
+
+  &__bottom {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  &__bottom-text {
+    color: vars.$background-light-color;
+    font-size: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .footer {
+      &__container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &__logo {
+        margin-bottom: 16px;
+      }
+
+      &__divider {
+        display: block;
+        width: 100%;
+        height: 1px;
+        border-bottom: 1px solid vars.$divider-secodary-color;
+      }
+    }
+  }
+}
