@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HomeImageDesktop from "../../../assets/homeImgDesktop.png";
-import Footer from "../../../components/footer/Footer";
-import SelectInput from "../../../components/selectInput/SelectInput";
+
+
 import Checkbox from "../../../components/ui/checkbox/Checkbox";
 import Input from "../../../components/ui/input/Input";
 import usePlan from "../../../shared/hooks/usePlan";
@@ -10,6 +10,8 @@ import { InitialStateProps, KeyForm, TypeDocument } from "../../../shared/interf
 import { ErrorsType, validateForm } from "../../../shared/utils/validateForm";
 import { RoutesPath } from "../../constants/routes";
 import "./homeStyles.scss";
+import SelectInput from "@/components/selectInput/SelectInput";
+import Footer from "@/components/footer/Footer";
 
 const HomePage = () => {
   const navigation = useNavigate();
