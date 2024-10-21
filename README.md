@@ -13,7 +13,8 @@ Puedes ver un demo en vivo de la aplicación en el siguiente enlace: Demo del Pr
 La estructura de carpetas dentro de la carpeta src es la siguiente:
 
 
-``src/
+```plaintext
+src/
 ├── components/
 ├── modules/
 │   ├── components/
@@ -25,7 +26,7 @@ La estructura de carpetas dentro de la carpeta src es la siguiente:
     ├── interfaces/
     ├── layouts/
     └── pages/
-``
+```
 
 
 
