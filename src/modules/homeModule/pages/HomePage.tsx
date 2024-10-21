@@ -11,7 +11,8 @@ import { ErrorsType, validateForm } from "../../../shared/utils/validateForm";
 import { RoutesPath } from "../../constants/routes";
 import "./homeStyles.scss";
 import SelectInput from "@/components/selectInput/SelectInput";
-import Footer from "@/components/footer/Footer";
+import Footer from "../components/footer/Footer";
+
 
 const HomePage = () => {
   const navigation = useNavigate();

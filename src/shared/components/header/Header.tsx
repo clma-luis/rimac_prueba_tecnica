@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import PhoneIcon from "../../shared/icons/PhoneIcon";
-import Logo from "../ui/logo/Logo";
+import PhoneIcon from "../../icons/PhoneIcon";
+
 import "./headerStyles.scss";
+import Logo from "@/components/ui/logo/Logo";
 
 
 const Header = () => {
