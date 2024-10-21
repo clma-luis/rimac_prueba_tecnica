@@ -30,3 +30,7 @@ export enum TypeDocument {
   DNI = "DNI",
   CE = "CE",
 }
+
+export type StepperDataProps = { number: number; label: string; active: boolean };
+
+export type StepperProps = { current: number; stepperData: StepperDataProps[] };

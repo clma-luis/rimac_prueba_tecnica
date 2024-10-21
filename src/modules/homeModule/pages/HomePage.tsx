@@ -8,8 +8,8 @@ import Input from "../../../components/ui/input/Input";
 import usePlan from "../../../shared/hooks/usePlan";
 import { InitialStateProps, KeyForm, TypeDocument } from "../../../shared/interfaces/usePlanInterfaces";
 import { ErrorsType, validateForm } from "../../../shared/utils/validateForm";
-import "./homeStyles.scss";
 import { RoutesPath } from "../../constants/routes";
+import "./homeStyles.scss";
 
 const HomePage = () => {
   const navigation = useNavigate();
@@ -109,6 +109,7 @@ const HomePage = () => {
         </div>
       </div>
       <Footer />
+      
     </div>
   );
 };

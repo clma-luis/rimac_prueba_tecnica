@@ -39,9 +39,7 @@ export const validateForm = (form: FormProps): ValidateFormResponse | null => {
     errors.commercialComm = true;
   }
 
-  // Mejorar la verificación de hasErrors
   const hasErrors = Object.values(errors).some((error) => {
-    // Consideramos un error si es un string no vacío o un booleano que es `true`
     return (typeof error === "string" && error !== "") || (typeof error === "boolean" && error === true);
   });
   const result = { errors, hasErrors };

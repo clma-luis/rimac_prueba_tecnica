@@ -1,7 +1,7 @@
 import React from "react";
-import "./cardPlanStyles.scss";
-import { DataPlanProps } from "../../config/config";
 import { CurrentPlanProps } from "../../../../shared/interfaces/usePlanInterfaces";
+import { DataPlanProps } from "../../config/config";
+import "./cardPlanStyles.scss";
 
 interface CardPlanProps extends DataPlanProps {
   handleClick: (item: CurrentPlanProps) => void;

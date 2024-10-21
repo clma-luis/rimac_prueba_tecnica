@@ -6,18 +6,18 @@ import Header from "./components/header/Header";
 import HomePage from "./modules/homeModule/pages/HomePage";
 import PlanPage from "./modules/planModule/pages/planPage/PlanPage";
 import SummaryPage from "./modules/planModule/pages/summaryPage/SummaryPage";
-import NotFoundPage from "./shared/pages/notFoundPage/NotFoundPage";
-import StepperLayout from "./shared/layouts/StepperLayout";
 import AppLayout from "./shared/layouts/appLayout/AppLayout";
 import HeaderNavigateLayout from "./shared/layouts/HeaderNavigateLayout";
+import StepperLayout from "./shared/layouts/StepperLayout";
+import NotFoundPage from "./shared/pages/notFoundPage/NotFoundPage";
 import PlanProvider from "./shared/providers/PlanProvider";
 
 function App() {
   return (
     <Router>
-      <AppLayout>
-        <Header />
-        <PlanProvider>
+      <PlanProvider>
+        <AppLayout>
+          <Header />
           <StepperLayout>
             <HeaderNavigateLayout>
               <Routes>
@@ -28,8 +28,8 @@ function App() {
               </Routes>
             </HeaderNavigateLayout>
           </StepperLayout>
-        </PlanProvider>
-      </AppLayout>
+        </AppLayout>
+      </PlanProvider>
     </Router>
   );
 }

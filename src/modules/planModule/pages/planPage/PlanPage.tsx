@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import usePlan from "../../../../shared/hooks/usePlan";
 import { CurrentPlanProps, ForWhomIsPlanProps } from "../../../../shared/interfaces/usePlanInterfaces";
@@ -7,19 +7,25 @@ import Card from "../../components/cardOptions/Card";
 import CardPlan from "../../components/cardPlan/CardPlan";
 import { dataPlan, dataQuotation } from "../../config/config";
 import "./planStyles.scss";
+import Loader from "../../../../components/loader/Loader";
 
 const PlanPage = () => {
   const navigation = useNavigate();
-  const { handleForWhomIsPlan, handleSelectPlan, validateData } = usePlan();
+  const { handleForWhomIsPlan, handleSelectPlan, validateData, updateStepper } = usePlan();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     executeValidation();
+    updateStepper(1);
   }, []);
 
   const executeValidation = () => {
-    if (validateData()) {
+    
+    if (validateData(false)) {
       navigation(RoutesPath.HOME);
+      return
     }
+    setIsLoading(false);
   };
 
   const handleForWhom = (item: ForWhomIsPlanProps) => {
@@ -28,8 +34,11 @@ const PlanPage = () => {
 
   const handleClickPlan = (item: CurrentPlanProps) => {
     handleSelectPlan(item);
+
     navigation(RoutesPath.SUMMARY);
   };
+
+  if (isLoading) return <Loader />;
 
   return (
     <section className="plan-page-section">

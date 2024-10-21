@@ -1,9 +1,10 @@
-import { useState } from "react";
-import "./stepperStyles.scss";
 import ArrowBackIcon from "../../../shared/icons/ArrowBackIcon";
+import "./stepperStyles.scss";
 
 interface StepperProps {
-  steps?: { number: number; label: string }[];
+  currentStep: number;
+  updateStepper: (step: number) => void;
+  steps?: { number: number; label: string, active: boolean }[];
 }
 
 const defaultData = [
@@ -12,16 +13,16 @@ const defaultData = [
 ];
 
 const Stepper: React.FC<StepperProps> = (props) => {
-  const { steps = defaultData } = props;
-  const [currentStep, setCurrentStep] = useState(1);
+  const { steps = defaultData, currentStep, updateStepper } = props;
+
 
   return (
     <>
-      <StepperResponsive steps={steps} currentStep={currentStep} setCurrentStep={setCurrentStep} />
+      <StepperResponsive steps={steps} currentStep={currentStep} setCurrentStep={updateStepper} />
 
       <div className="stepper">
         {steps.map((step, index) => (
-          <div key={step.number} className="stepper__step" onClick={() => setCurrentStep(step.number)}>
+          <div key={step.number} className="stepper__step" onClick={() => updateStepper(step.number)}>
             <div className={`stepper__number ${currentStep !== step.number ? "stepper__number--inactive" : ""}`}>{step.number}</div>
             <div className={`stepper__label ${currentStep !== step.number ? "stepper__label--inactive" : ""}`}>{step.label}</div>
             {index < steps.length - 1 && <div className="stepper__divider" />}

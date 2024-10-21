@@ -6,22 +6,19 @@ import { RoutesPath } from "../../../constants/routes";
 import "./summaryStyles.scss";
 
 const SummaryPage: React.FC = () => {
-  const { state,validateData } = usePlan();
+  const { state, validateData, updateStepper } = usePlan();
   const navigation = useNavigate();
 
   useEffect(() => {
     executeValidation();
+    updateStepper(2);
   }, []);
 
   const executeValidation = () => {
-
-    if(validateData()){
+    if (validateData(true)) {
       navigation(RoutesPath.HOME);
     }
   };
-
-
-  
 
   return (
     <section className="summary">
