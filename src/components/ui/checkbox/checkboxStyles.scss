@@ -8,6 +8,8 @@
   font-size: 12px;
   user-select: none;
 
+
+
   input {
     position: absolute;
     opacity: 0;
@@ -40,6 +42,10 @@
     }
   }
 
+.checkmark-error{
+  border: 1px solid vars.$error-color;
+}
+
   input:checked ~ .checkmark {
     background-color: vars.$text-color;
   }
@@ -47,4 +53,8 @@
   input:checked ~ .checkmark:after {
     display: block;
   }
+}
+
+.error {
+  color: vars.$error-color;
 }

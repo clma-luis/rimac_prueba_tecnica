@@ -1,13 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import ArrowBackIcon from "../../shared/icons/ArrowBackIcon";
 import "./headerNavigationStyles.scss";
+import { RoutesPath } from "../../modules/constants/routes";
 
-export const HeaderNavigation = () => {
-    const navigate = useNavigate();
+interface HeaderNavigationProps {
+  toNavigate?: RoutesPath;
+}
 
-    const handleClick = () => {
-      navigate("/");
-    }
+export const HeaderNavigation: React.FC<HeaderNavigationProps> = (props) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    props.toNavigate && navigate(props.toNavigate || RoutesPath.HOME);
+  };
 
   return (
     <section className="header-navigation">

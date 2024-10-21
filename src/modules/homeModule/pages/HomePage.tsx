@@ -1,21 +1,34 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import HomeImageDesktop from "../../../assets/homeImgDesktop.png";
-import Checkbox from "../../../components/ui/checkbox/Checkbox";
 import Footer from "../../../components/footer/Footer";
-import Input from "../../../components/ui/input/Input";
 import SelectInput from "../../../components/selectInput/SelectInput";
+import Checkbox from "../../../components/ui/checkbox/Checkbox";
+import Input from "../../../components/ui/input/Input";
+import usePlan from "../../../shared/hooks/usePlan";
+import { InitialStateProps, KeyForm, TypeDocument } from "../../../shared/interfaces/usePlanInterfaces";
+import { ErrorsType, validateForm } from "../../../shared/utils/validateForm";
 import "./homeStyles.scss";
+import { RoutesPath } from "../../constants/routes";
 
 const HomePage = () => {
-  const [documentType, setDocumentType] = useState("DNI");
-  const [documentNumber, setDocumentNumber] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [privacyPolicy, setPrivacyPolicy] = useState(false);
-  const [commercialComm, setCommercialComm] = useState(false);
+  const navigation = useNavigate();
+  const { state, handleValueChange } = usePlan();
+  const { commercialComm, document, documentType, phone, privacyPolicy } = (state as InitialStateProps).form;
+  const [error, setError] = useState({} as ErrorsType);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
+    setError({});
+
+    const result = validateForm(state.form);
+
+    if (result?.hasErrors) {
+      setError(result?.errors);
+      return;
+    }
+
+    navigation(RoutesPath.PLAN);
   };
 
   return (
@@ -44,39 +57,49 @@ const HomePage = () => {
 
             <form onSubmit={handleSubmit} className="home__form">
               <SelectInput
-                selectOptions={["DNI", "CE", "TP"]}
-                inputOnchange={(e) => {
-                  e;
-                }}
-                inputValue="12341234"
-                selectOnChange={(e) => setDocumentType(e)}
+                inputName={KeyForm.document}
+                inputType="number"
+                selectName={KeyForm.documentType}
+                selectOptions={[TypeDocument.DNI, TypeDocument.CE]}
+                inputOnchange={handleValueChange}
+                inputValue={document}
+                selectOnChange={handleValueChange}
                 selectValue={documentType}
+                error={!!(error.document as string)}
+                errorText={error.document as string}
               />
 
               <Input
                 label="Celular"
-                type="text"
-                value={phoneNumber}
-                onChange={(e) => {
-                  e;
-                }}
+                name={KeyForm.phone}
+                type="number"
+                value={phone}
+                onChange={handleValueChange}
+                error={!!(error.phone as string)}
+                errorText={error.phone as string}
               />
 
               <div className="checkbox-group">
                 <Checkbox
+                  name={KeyForm.privacyPolicy}
                   checked={privacyPolicy}
                   text="Acepto la Política de Privacidad"
-                  setChecked={(e) => setPrivacyPolicy(e.target.checked)}
+                  setChecked={handleValueChange}
+                  error={!!(error.privacyPolicy as string)}
                 />
 
                 <Checkbox
+                  name={KeyForm.commercialComm}
                   checked={commercialComm}
                   text="Acepto la Política Comunicaciones Comerciales"
-                  setChecked={(e) => setCommercialComm(e.target.checked)}
+                  setChecked={handleValueChange}
+                  error={!!(error.commercialComm as string)}
                 />
               </div>
 
-              <a href="https://www.rimac.com/politica-privacidad" className="terms">Aplican Términos y Condiciones.</a>
+              <a href="https://www.rimac.com/politica-privacidad" className="terms">
+                Aplican Términos y Condiciones.
+              </a>
 
               <button type="submit" className="submit-button">
                 Cotiza aquí

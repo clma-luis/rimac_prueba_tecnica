@@ -5,9 +5,9 @@ import "./notFoundStyles.scss";
 const NotFoundPage: React.FC = () => {
   return (
     <div className="not-found">
-      <h1 className="not-found__title">404 - Page Not Found</h1>
-      <p className="not-found__message">Oops! The page you are looking for does not exist.</p>
-      <Link to="/" className="not-found__link">Go back to Home</Link>
+      <h1 className="not-found__title">404 - Página no encontrada</h1>
+      <p className="not-found__message">Oops! La página que estás buscando no existe.</p>
+      <Link to="/" className="not-found__link">Volver al inicio</Link>
     </div>
   );
 };

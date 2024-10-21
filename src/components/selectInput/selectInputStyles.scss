@@ -14,6 +14,11 @@
   border-right: 0;
 }
 
+.custom-select-error {
+  border: 1px solid vars.$error-color;
+  border-right: 0 ;
+}
+
 .custom-option {
   display: flex;
   justify-content: center;
@@ -21,4 +26,5 @@
 
 .input-container {
   flex: 1;
+  margin-bottom: 0px;
 }

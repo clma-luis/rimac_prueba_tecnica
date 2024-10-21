@@ -1,17 +1,27 @@
 import React from "react";
 import "./cardPlanStyles.scss";
 import { DataPlanProps } from "../../config/config";
+import { CurrentPlanProps } from "../../../../shared/interfaces/usePlanInterfaces";
 
-const CardPlan: React.FC<DataPlanProps> = (props) => {
-  const { feature, title, price, recommended, icon } = props;
+interface CardPlanProps extends DataPlanProps {
+  handleClick: (item: CurrentPlanProps) => void;
+}
+
+const CardPlan: React.FC<CardPlanProps> = (props) => {
+  const { handleClick, ...restProps } = props;
+  const { feature, title, price, recommended, icon } = restProps;
   const IconComponent = icon;
-  
+
+  const handleOnClick = (item: DataPlanProps) => {
+    const { icon, ...restProps } = item;
+
+    handleClick(restProps);
+  };
+
   return (
     <div className="card-plan">
       <div className="card-plan__content">
-        <div className="card-plan__header">
-          {recommended && <span className="card-plan__tag">{recommended}</span>}
-        </div>
+        <div className="card-plan__header">{recommended && <span className="card-plan__tag">{recommended}</span>}</div>
 
         <div className="card-plan__title-container">
           <h2 className="card-plan__title">{title}</h2>
@@ -28,13 +38,17 @@ const CardPlan: React.FC<DataPlanProps> = (props) => {
         <div className="card-plan__features">
           <ul>
             {feature.map((item, index) => (
-              <li key={index} className="card-plan__feature-item">{item}</li>
+              <li key={index} className="card-plan__feature-item">
+                {item}
+              </li>
             ))}
           </ul>
         </div>
       </div>
 
-      <button className="card-plan__button">Seleccionar Plan</button>
+      <button className="card-plan__button" onClick={() => handleOnClick(restProps)}>
+        Seleccionar Plan
+      </button>
     </div>
   );
 };

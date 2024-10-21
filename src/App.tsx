@@ -9,23 +9,26 @@ import SummaryPage from "./modules/planModule/pages/summaryPage/SummaryPage";
 import NotFoundPage from "./shared/pages/notFoundPage/NotFoundPage";
 import StepperLayout from "./shared/layouts/StepperLayout";
 import AppLayout from "./shared/layouts/appLayout/AppLayout";
-import HeaderNavigateLayout from "./shared/layouts/headerNavigateLayout";
+import HeaderNavigateLayout from "./shared/layouts/HeaderNavigateLayout";
+import PlanProvider from "./shared/providers/PlanProvider";
 
 function App() {
   return (
     <Router>
       <AppLayout>
         <Header />
-        <StepperLayout>
-          <HeaderNavigateLayout>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/plan" element={<PlanPage />} />
-              <Route path="/summary" element={<SummaryPage />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </HeaderNavigateLayout>
-        </StepperLayout>
+        <PlanProvider>
+          <StepperLayout>
+            <HeaderNavigateLayout>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/plan" element={<PlanPage />} />
+                <Route path="/summary" element={<SummaryPage />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </HeaderNavigateLayout>
+          </StepperLayout>
+        </PlanProvider>
       </AppLayout>
     </Router>
   );

@@ -1,11 +1,10 @@
-@use '../../../shared/styles/variables.scss' as vars;
+@use "../../../shared/styles/variables.scss" as vars;
 
 .input {
   position: relative;
-  height: auto; 
+  height: auto;
   background-color: vars.$background-light-color;
   border-radius: 8px;
-
 
   label {
     position: absolute;
@@ -24,7 +23,7 @@
     outline: none;
     font-size: 16px;
     color: vars.$imput-color;
-    height: 50px; 
+    height: 50px;
     border: 1px solid vars.$input-border-color;
     border-radius: 8px;
     padding-left: 8px;
@@ -35,6 +34,10 @@
     &:focus::placeholder {
       color: vars.$placeholder-focus-color;
     }
+  }
+
+  .inputStyles--error {
+    border-color: vars.$error-color;
   }
 
   &.focused,
@@ -49,5 +52,10 @@
   &.focused input::placeholder {
     color: vars.$placeholder-color;
   }
-}
 
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

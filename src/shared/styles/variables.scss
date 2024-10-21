@@ -1,4 +1,4 @@
-@import "./fonts.scss";
+@use "./fonts.scss";
 
 /* Primary and Secondary Colors */
 $primary-color: #3498db;
@@ -29,8 +29,10 @@ $divider-secodary-color: #2b304e;
 $box-shadow: 1px 1px 20px rgba(153, 133, 133, 0.3);
 
 /* Fonts */
-$primary-font: 'Sonoma', sans-serif;
+$primary-font: fonts, sans-serif;
 $secondary-font: 'Lato', sans-serif;
 
 /* Border Radius */
 $border-radius: 4px;
+
+$error-color: red
