@@ -1,7 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 
-import Header from "./components/header/Header";
+;
 
 import HomePage from "./modules/homeModule/pages/HomePage";
 import PlanPage from "./modules/planModule/pages/planPage/PlanPage";
@@ -11,6 +11,7 @@ import HeaderNavigateLayout from "./shared/layouts/HeaderNavigateLayout";
 import StepperLayout from "./shared/layouts/StepperLayout";
 import NotFoundPage from "./shared/pages/notFoundPage/NotFoundPage";
 import PlanProvider from "./shared/providers/PlanProvider";
+import Header from "./components/header/Header";
 
 function App() {
   return (
