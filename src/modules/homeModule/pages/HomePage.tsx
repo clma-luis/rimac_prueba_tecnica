@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HomeImageDesktop from "../../../assets/homeImgDesktop.png";
+
+
 import Checkbox from "../../../components/ui/checkbox/Checkbox";
 import Input from "../../../components/ui/input/Input";
 import usePlan from "../../../shared/hooks/usePlan";
@@ -9,7 +11,27 @@ import { ErrorsType, validateForm } from "../../../shared/utils/validateForm";
 import { RoutesPath } from "../../constants/routes";
 import "./homeStyles.scss";
 import SelectInput from "@/components/selectInput/SelectInput";
+
+
+import "./footerStyles.scss";
 import Logo from "@/components/ui/logo/Logo";
+
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <div className="footer__container">
+        <div className="footer__logo">
+          <Logo color="#ffffff" />
+        </div>
+        <div className="footer__divider" />
+        <div className="footer__bottom">
+          <p className="footer__bottom-text">&copy; 2023 RIMAC Seguros y Reaseguros.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
 
 const HomePage = () => {
   const navigation = useNavigate();
@@ -115,21 +137,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-
-
-const Footer = () => {
-  return (
-    <footer className="footer">
-      <div className="footer__container">
-        <div className="footer__logo">
-          <Logo color="#ffffff" />
-        </div>
-        <div className="footer__divider" />
-        <div className="footer__bottom">
-          <p className="footer__bottom-text">&copy; 2023 RIMAC Seguros y Reaseguros.</p>
-        </div>
-      </div>
-    </footer>
-  );
-};
