@@ -8,6 +8,7 @@ import CardPlan from "../../components/cardPlan/CardPlan";
 import { dataPlan, dataQuotation } from "../../config/config";
 import "./planStyles.scss";
 import Loader from "../../../../components/loader/Loader";
+import { scrollTop } from "../../../../shared/utils";
 
 const PlanPage = () => {
   const navigation = useNavigate();
@@ -17,6 +18,7 @@ const PlanPage = () => {
   useEffect(() => {
     executeValidation();
     updateStepper(1);
+    scrollTop();
   }, []);
 
   const executeValidation = () => {

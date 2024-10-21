@@ -1,6 +1,7 @@
 import React from "react";
 import Input from "../ui/input/Input";
 import "./selectInputStyles.scss";
+import ArrowDownIcon from "../../shared/icons/ArrowDownIcon";
 
 interface SelectInputProps {
   inputName: string;
@@ -40,7 +41,11 @@ const SelectInput: React.FC<SelectInputProps> = (props) => {
   };
 
   return (
-    <div style={{display: "flex", flexDirection: "column", gap: "4px",}}>
+    <div style={{display: "flex", flexDirection: "column", gap: "4px", position: "relative"}}>
+      <div style={{position: "absolute", left: "80px", top: "14px", cursor: "pointer"}}>
+        <ArrowDownIcon/>
+      </div>
+      
       <div className="select-input-container">
         <select name={selectName} value={selectValue} onChange={handleSelectOnChange} className={`custom-select ${error ? "custom-select-error" : ""}`}>
           {selectOptions.map((item, index) => (

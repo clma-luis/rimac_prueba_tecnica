@@ -10,9 +10,18 @@
   width: 30%;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+  color: vars.$text-color;
+  font-size: 16px;
+  font-weight: 400;
   border-color: vars.$input-border-color;
   border-right: 0;
+  padding-left: 8px;
+  appearance: none; 
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
 }
+
+
 
 .custom-select-error {
   border: 1px solid vars.$error-color;

@@ -22,11 +22,13 @@
     border: none;
     outline: none;
     font-size: 16px;
-    color: vars.$imput-color;
+    color: vars.$text-color;
+    font-weight: 400;
     height: 50px;
     border: 1px solid vars.$input-border-color;
     border-radius: 8px;
     padding-left: 8px;
+    padding-top: 10px;
     &::placeholder {
       color: transparent;
     }

@@ -4,6 +4,7 @@ import usePlan from "../../../../shared/hooks/usePlan";
 import { UsersIcon } from "../../../../shared/icons/UsersIcon";
 import { RoutesPath } from "../../../constants/routes";
 import "./summaryStyles.scss";
+import { scrollTop } from "../../../../shared/utils";
 
 const SummaryPage: React.FC = () => {
   const { state, validateData, updateStepper } = usePlan();
@@ -12,6 +13,7 @@ const SummaryPage: React.FC = () => {
   useEffect(() => {
     executeValidation();
     updateStepper(2);
+    scrollTop();
   }, []);
 
   const executeValidation = () => {
