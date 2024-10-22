@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Loader from "../../../../components/loader/Loader";
 import usePlan from "../../../../shared/hooks/usePlan";
 import { CurrentPlanProps, ForWhomIsPlanProps } from "../../../../shared/interfaces/usePlanInterfaces";
+import { scrollTop } from "../../../../shared/utils";
 import { RoutesPath } from "../../../constants/routes";
 import Card from "../../components/cardOptions/Card";
 import CardPlan from "../../components/cardPlan/CardPlan";
-import { dataPlan, dataQuotation } from "../../config/config";
+import { dataQuotation, forAnotherPlan, forMySelfPlan, ForWhomIsPlanId } from "../../config/config";
 import "./planStyles.scss";
-import Loader from "../../../../components/loader/Loader";
-import { scrollTop } from "../../../../shared/utils";
 
 const PlanPage = () => {
   const navigation = useNavigate();
-  const { handleForWhomIsPlan, handleSelectPlan, validateData, updateStepper } = usePlan();
+  const { state, handleForWhomIsPlan, handleSelectPlan, validateData, updateStepper } = usePlan();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -20,14 +20,25 @@ const PlanPage = () => {
     updateStepper(1);
     scrollTop();
   }, []);
+  
 
   const executeValidation = () => {
-    
     if (validateData(false)) {
       navigation(RoutesPath.HOME);
-      return
+      return;
     }
     setIsLoading(false);
+  };
+
+  const showCurrentPlanOptions = () => {
+    const option = {
+      [ForWhomIsPlanId.FOR_MYSELF]: forMySelfPlan,
+      [ForWhomIsPlanId.FOR_ANOTHER]: forAnotherPlan,
+    };
+
+    const result = option[state.forWhomIsPlan.title];
+
+    return result || [];
   };
 
   const handleForWhom = (item: ForWhomIsPlanProps) => {
@@ -39,6 +50,15 @@ const PlanPage = () => {
 
     navigation(RoutesPath.SUMMARY);
   };
+
+  const validateIfExisForWhomPlan = () => {
+    const { title, description } = state.forWhomIsPlan;
+
+    return title && description;
+  };
+
+  const currentPlans = showCurrentPlanOptions();
+  console.log({ currentPlans });
 
   if (isLoading) return <Loader />;
 
@@ -56,21 +76,24 @@ const PlanPage = () => {
           ))}
         </div>
 
-        <div className="plan-page-plans">
-          <div className="plan-page-plans-container">
-            {dataPlan.map((item, index) => (
-              <CardPlan
-                key={index}
-                title={item.title}
-                price={item.price}
-                feature={item.feature}
-                recommended={item.recommended}
-                icon={item.icon}
-                handleClick={handleClickPlan}
-              />
-            ))}
+        {validateIfExisForWhomPlan() && (
+          <div className="plan-page-plans">
+            <div className="plan-page-plans-container">
+              {currentPlans.map((item, index) => (
+                <CardPlan
+                  key={index}
+                  title={item.title}
+                  before={item?.before}
+                  price={item.price}
+                  feature={item.feature}
+                  recommended={item.recommended}
+                  icon={item.icon}
+                  handleClick={handleClickPlan}
+                />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

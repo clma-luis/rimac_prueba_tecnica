@@ -1,10 +1,12 @@
+import { RoutesPath } from "@/modules/constants/routes";
+import { useNavigate } from "react-router-dom";
 import ArrowBackIcon from "../../../shared/icons/ArrowBackIcon";
 import "./stepperStyles.scss";
 
 interface StepperProps {
   currentStep: number;
   updateStepper: (step: number) => void;
-  steps?: { number: number; label: string, active: boolean }[];
+  steps?: { number: number; label: string; active: boolean }[];
 }
 
 const defaultData = [
@@ -15,10 +17,9 @@ const defaultData = [
 const Stepper: React.FC<StepperProps> = (props) => {
   const { steps = defaultData, currentStep, updateStepper } = props;
 
-
   return (
     <>
-      <StepperResponsive steps={steps} currentStep={currentStep} setCurrentStep={updateStepper} />
+      <StepperResponsive steps={steps} currentStep={currentStep} />
 
       <div className="stepper">
         {steps.map((step, index) => (
@@ -37,25 +38,29 @@ export default Stepper;
 
 interface StepperResponsiveProps {
   currentStep: number;
-  setCurrentStep: (step: number) => void;
   steps: { number: number; label: string }[];
 }
 
 const StepperResponsive: React.FC<StepperResponsiveProps> = (props) => {
-  const { steps, currentStep, setCurrentStep } = props;
+  const navigation = useNavigate();
+  const { steps, currentStep } = props;
   const totalSteps = steps.length;
 
   const handleBack = () => {
-    if (currentStep > 1) {
-      setCurrentStep(currentStep - 1);
-    }
+    const navigateTo: { [key: number]: string } = {
+      1: RoutesPath.HOME,
+      2: RoutesPath.PLAN,
+    };
+
+    const path = navigateTo[currentStep];
+
+    navigation(path);
   };
 
   return (
     <div className="stepperResponsive">
       <button className="stepperResponsive__back" onClick={handleBack}>
-        <ArrowBackIcon
-        />
+        <ArrowBackIcon />
       </button>
       <div className="stepperResponsive__text">
         PASO {currentStep} DE {totalSteps}

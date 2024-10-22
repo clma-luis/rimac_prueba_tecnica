@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CurrentPlanProps, ForWhomIsPlanProps, InitialStateProps, KeyForm, TypeDocument } from "../interfaces/usePlanInterfaces";
 import { validateForm } from "../utils/validateForm";
+import { ForWhomIsPlanId } from "@/modules/planModule/config/config";
 
 export interface PlanProviderProps {
   state: InitialStateProps;
@@ -22,7 +23,7 @@ const initialState = {
     [KeyForm.privacyPolicy]: false,
     [KeyForm.commercialComm]: false,
   },
-  forWhomIsPlan: { title: "", description: "" },
+  forWhomIsPlan: { title: "" as ForWhomIsPlanId, description: "" },
   currentPlan: { title: "", price: "", feature: [], recommended: "" },
 };
 

@@ -30,6 +30,7 @@ const CardPlan: React.FC<CardPlanProps> = (props) => {
 
         <div className="card-plan__price-container">
           <h4 className="card-plan__price-label">Costo del plan</h4>
+          {restProps?.before && <p className="card-plan__price-before">{restProps?.before}</p>}
           <p className="card-plan__price">{price}</p>
         </div>
 

@@ -12,6 +12,16 @@
   justify-content: space-between;
   padding-bottom: 40px;
 
+
+  &__price-before {
+    font-size: 14px;
+    margin: 0px;
+    font-weight: 400;
+    line-height: 20px;
+    text-decoration-line: line-through;
+    color: vars.$text-info-color;
+  }
+
   &__content {
     width: 100%;
   }
