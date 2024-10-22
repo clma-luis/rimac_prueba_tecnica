@@ -42,12 +42,5 @@ src/
 - **Estado Global**: Se implementó un manejo eficiente del estado global utilizando hooks, lo que facilita la gestión del estado de la aplicación.
 - **Rutas**: Se utilizó React Router DOM para manejar las rutas de manera efectiva.
 
-## Instalación
 
-Para instalar y ejecutar el proyecto en tu máquina local, sigue estos pasos:
-
-1. **Clona el repositorio:**
-   ```bash
-   git clone [URL_DEL_REPOSITORIO]
-   cd [NOMBRE_DEL_REPOSITORIO]
 
